@@ -18,24 +18,40 @@ class Program
             Console.WriteLine("3 - sprawdź czy liczba jest parzysta");
             int wybor = int.Parse(Console.ReadLine());
 
-            if (wybor == 1)
+            if (wybor == 1) // dodawanie
             {
                 Console.WriteLine("Dodawanie. Podaj pierwszą liczbe i wciśniej enter:");
-                int suma_liczba1 = int.Parse(Console.ReadLine());
+                int a = int.Parse(Console.ReadLine());
                 Console.WriteLine("Podaj drugą liczbę i wcisnij enter:");
-                int suma_liczba2 = int.Parse(Console.ReadLine());
-                int wynik_dodawania = Dodawanie(suma_liczba1, suma_liczba2);
+                int b = int.Parse(Console.ReadLine());
+                Console.WriteLine("Suma:");
+                int wynik_dodawania = Dodawanie(a, b);
                 Console.WriteLine(wynik_dodawania);
-            } 
-
-  
-        } else //jeżeli inaczej, to wykonaj instrukcję
-        {
-            Console.WriteLine("Dla Ciebie zamknięte.");
-        }
-             
+            } else if (wybor == 2) // mnozenie
+            {
+                Console.WriteLine("Mnożenie. Poadaj pierwszą liczbę i naciśnij enter:");
+                int a = int.Parse(Console.ReadLine());
+                Console.WriteLine("Podaj drugą liczbę i naciśnij enter:");
+                int b = int.Parse(Console.ReadLine());
+                int wynik_mnozenia = Mnozenie(a, b);
+                Console.WriteLine($"Iloczyn: {wynik_mnozenia}");
+            }  else if (wybor == 3) // czy parzysta
+            {
+                Console.WriteLine("Czy liczba parzysta? Podaj liczbę i wciśnij enter:");
+                int n = int.Parse(Console.ReadLine());
+                bool tf_parzysta = CzyParzysta(n);
+                if (tf_parzysta == true)
+                {
+                  Console.WriteLine("Wynik: Parzysta");
+                } else
+                { Console.WriteLine("Wynik: Nieparzysta"); }
+            }  
+        } else 
+            {
+                Console.WriteLine("Dla Ciebie zamknięte.");
+            }      
     }
-    
+
 static int Dodawanie(int a, int b)
 {
     return a + b;
